@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.mapper.CoursewareMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.example.beans.Courseware">
+        <id column="cw_id" property="cwId" />
+        <result column="cw_course_id" property="cwCourseId" />
+        <result column="cw_name" property="cwName" />
+        <result column="cw_addr" property="cwAddr" />
+        <result column="cw_img_addr" property="cwImgAddr" />
+        <result column="cw_info" property="cwInfo" />
+        <result column="cw_type" property="cwType" />
+    </resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        cw_id, cw_course_id, cw_name, cw_addr, cw_img_addr, cw_info, cw_type
+    </sql>
+
+</mapper>

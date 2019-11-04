@@ -1,0 +1,19 @@
+# 数据库配置
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/study_online?characterEncoding=utf-8&serverTimezone=UTC
+    username: root
+    password: root
+
+# 日志配置
+logging:
+  level:
+    com.example.mapper: debug
+
+# 分页配置
+pagehelper:
+  helperDialect: mysql
+  reasonable: true
+  supportMethodsArguments: true
+  params: count=countSql
