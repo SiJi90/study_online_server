@@ -5,7 +5,11 @@ spring:
     url: jdbc:mysql://localhost:3306/study_online?characterEncoding=utf-8&serverTimezone=UTC
     username: root
     password: root
-
+  servlet:
+    multipart:
+      enabled: true
+      max-file-size: 500MB
+      max-request-size: 500MB
 # 日志配置
 logging:
   level:
@@ -17,3 +21,4 @@ pagehelper:
   reasonable: true
   supportMethodsArguments: true
   params: count=countSql
+

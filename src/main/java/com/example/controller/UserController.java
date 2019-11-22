@@ -169,5 +169,48 @@ public class UserController {
         return Msg.fail();
     }
 
+    /**
+     * 用户登录
+     *
+     * @param user 用户账号和密码
+     * @return 验证成功或失败
+     */
+    @PostMapping
+    public Msg login(User user) {
+        User one = userService.getOne(new QueryWrapper<User>()
+                .eq("user_account", user.getUserAccount())
+                .eq("user_pass", user.getUserPass())
+        );
+        if (one != null) {
+            return Msg.success().add("user", one);
+        } else {
+            return Msg.fail();
+        }
+
+    }
+
+    /**
+     * 获取所有学生列表
+     *
+     * @return 所有学生列表
+     */
+    @GetMapping("students")
+    public Msg getStudents() {
+        List<User> students = userService.list(new QueryWrapper<User>().eq("user_role_id", 2));
+        return Msg.success().add("students", students);
+    }
+
+    /**
+     * 根据用户 id 获取用户信息
+     *
+     * @param userId
+     * @return
+     */
+    @GetMapping("/getOne")
+    public Msg getOneUser(Integer userId) {
+        User user = userService.getOne(new QueryWrapper<User>().eq("user_id", userId));
+        return Msg.success().add("user", user);
+    }
+
 }
 

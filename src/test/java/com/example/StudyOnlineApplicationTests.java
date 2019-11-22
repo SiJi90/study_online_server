@@ -88,4 +88,24 @@ class StudyOnlineApplicationTests {
         // 执行
         ag.execute();
     }
+
+    @Test
+    public void test() {
+        // 这人居然让我逆序输出, 哈哈哈, 为难我程序猿???
+        String peng = "xttzuikeaiofgeva, ixyuakzpxnfbega, jskakwbdvxgahwotbrcagsjxbdhshdgsjwapd. " +
+                "inbshfgshdkxbansoxuctebtngkajchevqkfurb";
+        StringBuilder sb = new StringBuilder(peng);
+        System.out.println(sb.reverse());
+    }
+
+    @Test
+    public void test01() {
+        // 再次拒绝
+        String peng = "xttzuikeaiofgeva, ixyuakzpxnfbega, jskakwbdvxgahwotbrcagsjxbdhshdgsjwapd. " +
+                "inbshfgshdkxbansoxuctebtngkajchevqkfurb";
+        char[] huiFu = peng.toCharArray();
+        for (int i = huiFu.length - 1; i > 0; i--) {
+            System.out.printf("%s", huiFu[i]);
+        }
+    }
 }
